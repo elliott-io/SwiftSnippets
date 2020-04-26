@@ -1,0 +1,25 @@
+[
+    {
+        "id": "1",
+        "title": "Saving Photos to a Custom Album",
+        "subtitle": "You can select a photo from a gallery of built-in photos and save one to a custom album.",
+        "sourceFiles": ["CustomPhotoAlbum.swift"],
+        "vcIdentifier": "galleryCollection"
+    },
+    {
+        "id": "2",
+        "title": "Popover Messages",
+        "subtitle": "Display a popover pointing to another view or in the center of the screen.",
+        "sourceFiles": ["PopoverViewController.swift", "AlwaysPresentAsPopover.swift"],
+        "assetImageName": "example-popover",
+        "vcIdentifier": "nil"
+    },
+    {
+        "id": "3",
+        "title": "Text Encryption",
+        "subtitle": "Encrypt and decrypt text.",
+        "sourceFiles": ["beep.swift", "boop.swift"],
+        "assetImageName": "encryption",
+        "vcIdentifier": "nil"
+    }
+]
