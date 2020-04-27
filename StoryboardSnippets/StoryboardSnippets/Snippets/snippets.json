@@ -11,8 +11,7 @@
         "title": "Popover Messages",
         "subtitle": "Display a popover pointing to another view or in the center of the screen.",
         "sourceFiles": ["PopoverViewController.swift", "AlwaysPresentAsPopover.swift"],
-        "assetImageName": "example-popover",
-        "vcIdentifier": "nil"
+        "vcIdentifier": "popoverPlacement"
     },
     {
         "id": "3",

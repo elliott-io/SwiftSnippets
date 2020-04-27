@@ -13,11 +13,11 @@ class GalleryViewController : UICollectionViewController {
     
     let cellId = "photoCell"
     let assets = ["goodVibesOnly", // https://www.instagram.com/p/Bji3MLiAP3r/
-        "charredTree", // https://www.instagram.com/p/Bj5TJvvF9ZO/
         "elCapitan", // https://www.instagram.com/p/Bo3S28mHgF5/
-        "tunnel2ndSt", // https://www.instagram.com/p/Bir4CY_FxAs/
         "tagYoureIt", // https://www.instagram.com/p/BiI5h4BFbrt/
         "unionStation", // https://www.instagram.com/p/BiYMOJEF-0N/
+        "tunnel2ndSt", // https://www.instagram.com/p/Bir4CY_FxAs/
+//        "charredTree", // https://www.instagram.com/p/Bj5TJvvF9ZO/
     ]
     
     override func viewDidLoad() {

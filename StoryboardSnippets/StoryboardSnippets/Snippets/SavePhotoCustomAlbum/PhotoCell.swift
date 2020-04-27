@@ -16,23 +16,20 @@ class PhotoCell: UICollectionViewCell {
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var buttonSave: UIButton!
 
-    let cornerRadius: CGFloat = 30.0
-    let buttonRadius: CGFloat = 15.0
-
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // set the border
-        self.bgImageView.layer.cornerRadius = self.cornerRadius
+        self.bgImageView.layer.cornerRadius = Styles.cornerRadius
         self.bgImageView.clipsToBounds = true
-        self.borderView.layer.cornerRadius = self.cornerRadius
+        self.borderView.layer.cornerRadius = Styles.cornerRadius
         self.borderView.layer.borderWidth = Styles.borderWidth
         self.borderView.layer.borderColor = Styles.borderColor
         self.borderView.clipsToBounds = true
         
         self.buttonSave.alpha = 0
         self.buttonSave.isUserInteractionEnabled = false
-        self.buttonSave.layer.cornerRadius = self.buttonRadius
+        self.buttonSave.layer.cornerRadius = Styles.buttonRadius
     }
     
     func set(_ image: UIImage) {
@@ -58,7 +55,7 @@ class PhotoCell: UICollectionViewCell {
     }
     
     func animateSave(alpha: CGFloat) {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: AntimationDuration.fadeInOut.rawValue, animations: {
             self.buttonSave.alpha = alpha
         }, completion: { result in
             // success
