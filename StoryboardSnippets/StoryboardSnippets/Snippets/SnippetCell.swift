@@ -47,7 +47,7 @@ class SnippetCell: UICollectionViewCell {
                 }
                 return }
         self.bgImageView.image = image
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: AntimationDuration.fadeInOut.rawValue, animations: {
             self.blurView.alpha = 0
         }, completion: { result in
             // success

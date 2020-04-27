@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0105EC0024563E55002B38A4 /* AlwaysPresentAsPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105EBFF24563E55002B38A4 /* AlwaysPresentAsPopover.swift */; };
+		0105EC0224563ECE002B38A4 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105EC0124563ECE002B38A4 /* PopoverViewController.swift */; };
+		0105EC0424568719002B38A4 /* PopoverPlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105EC0324568719002B38A4 /* PopoverPlacementViewController.swift */; };
 		017E1F062454E01000D5362E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E1F052454E01000D5362E /* AppDelegate.swift */; };
 		017E1F082454E01000D5362E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E1F072454E01000D5362E /* SceneDelegate.swift */; };
 		017E1F0D2454E01000D5362E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017E1F0B2454E01000D5362E /* Main.storyboard */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0105EBFF24563E55002B38A4 /* AlwaysPresentAsPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlwaysPresentAsPopover.swift; sourceTree = "<group>"; };
+		0105EC0124563ECE002B38A4 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		0105EC0324568719002B38A4 /* PopoverPlacementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPlacementViewController.swift; sourceTree = "<group>"; };
 		017E1F022454E01000D5362E /* Swift Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Snippets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		017E1F052454E01000D5362E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		017E1F072454E01000D5362E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +111,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		0105EBFE24563E15002B38A4 /* PopoverMessage */ = {
+			isa = PBXGroup;
+			children = (
+				0105EC0124563ECE002B38A4 /* PopoverViewController.swift */,
+				0105EBFF24563E55002B38A4 /* AlwaysPresentAsPopover.swift */,
+				0105EC0324568719002B38A4 /* PopoverPlacementViewController.swift */,
+			);
+			path = PopoverMessage;
+			sourceTree = "<group>";
+		};
 		017E1EF92454E01000D5362E = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +178,7 @@
 		017E1F50245530A200D5362E /* Snippets */ = {
 			isa = PBXGroup;
 			children = (
+				0105EBFE24563E15002B38A4 /* PopoverMessage */,
 				017E1F512455316600D5362E /* SavePhotoCustomAlbum */,
 				017E1F4624552B2900D5362E /* snippets.json */,
 				017E1F4C24552E4800D5362E /* Snippet.swift */,
@@ -316,6 +333,7 @@
 			files = (
 				017E1F062454E01000D5362E /* AppDelegate.swift in Sources */,
 				017E1F4524552A1E00D5362E /* CustomPhotoAlbum.swift in Sources */,
+				0105EC0224563ECE002B38A4 /* PopoverViewController.swift in Sources */,
 				017E1F4B24552C8200D5362E /* SnippetManager.swift in Sources */,
 				017E1F102454E01000D5362E /* StoryboardSnippets.xcdatamodeld in Sources */,
 				017E1F3F2454FE9300D5362E /* Styles.swift in Sources */,
@@ -326,6 +344,8 @@
 				017E1F412455157700D5362E /* GalleryViewController.swift in Sources */,
 				017E1F392454F80B00D5362E /* SnippetsViewController.swift in Sources */,
 				017E1F3D2454FDDD00D5362E /* Extensions.swift in Sources */,
+				0105EC0424568719002B38A4 /* PopoverPlacementViewController.swift in Sources */,
+				0105EC0024563E55002B38A4 /* AlwaysPresentAsPopover.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elliottio.StoryboardSnippets;
 				PRODUCT_NAME = "Swift Snippets";
 				SWIFT_VERSION = 5.0;
@@ -523,6 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elliottio.StoryboardSnippets;
 				PRODUCT_NAME = "Swift Snippets";
 				SWIFT_VERSION = 5.0;
