@@ -37,6 +37,13 @@ Once saved, you will see an alert with a small thumbnail of the image in the ale
 
 > **ProTip:** If you copy these source files into another project, make sure you add entries to your info.plist for **NSPhotoLibraryUsageDescription** and **NSPhotoLibraryAddUsageDescription**.
 
+## Popover Messages
+
+Selecting this [snippet](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/), you will see a [PopoverPlacementViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/PopoverPlacementViewController.swift) titled **Popover Placement** displaying a segmented control and a few buttons. 
+
+A [PopoverViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/PopoverViewController.swift) will be displayed when interacting with these items. 
+
+> **ProTip:** You'll notice in the extension function for [showPopover](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L61) that [AlwaysPresentAsPopover](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/AlwaysPresentAsPopover.swift) is used to make the PopoverViewController present as an actual popover, rather than a default view controller.
 
 # Extensions
 Several extensions were written in [Extensions.swift](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift) to help facilitate common functions that are used across snippets.
@@ -49,6 +56,12 @@ Returns the top UIViewController in the app heirarchy. Useful for presenting ale
 
 ## UIViewController - showAlert
 Displays an alert on any view controller with parameters for title, message, action name (which will appear on the alert button), and an optional image in corner of the header. 
+
+## UIViewController - showPopover
+Displays an automatically-sized popover on any view controller with parameters for message, source view, source rect (within that source view), passthrough views (which can still be interacted without dismissing the popover), and arrow direction. Dismisses existing presented view controller if one exists (iOS will not allow you to present more than one view controller at a time).
+
+## String - size
+Returns the visual size of text with parameters for default width, font, and font weight. Used to determine popover preferred size based on how long the message text is. 
 
 # Styles
 Light and Dark themes are supported using storyboard theming and a global [Styles.swift](/StoryboardSnippets/StoryboardSnippets/Helpers/Styles.swift) for consistency.
