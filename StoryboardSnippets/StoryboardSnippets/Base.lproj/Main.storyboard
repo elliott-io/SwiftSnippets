@@ -11,7 +11,7 @@
         <!--Snippets-->
         <scene sceneID="8ML-Ek-ir2">
             <objects>
-                <collectionViewController storyboardIdentifier="snippetsCollection" id="2gY-90-BOk" customClass="SnippetsViewController" customModule="StoryboardSnippets" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="snippetsCollection" id="2gY-90-BOk" customClass="SnippetsViewController" customModule="Swift_Snippets" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" springLoaded="YES" id="yGg-lx-IrL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="snippetCell" id="Cj9-Al-mu2" customClass="SnippetCell" customModule="StoryboardSnippets" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="snippetCell" id="Cj9-Al-mu2" customClass="SnippetCell" customModule="Swift_Snippets" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="414" height="685"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XIQ-kM-wdn">
@@ -143,7 +143,7 @@
         <!--Asset Gallery-->
         <scene sceneID="rbs-vY-lQK">
             <objects>
-                <collectionViewController storyboardIdentifier="galleryCollection" id="lZK-2E-92y" customClass="GalleryViewController" customModule="StoryboardSnippets" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="galleryCollection" id="lZK-2E-92y" customClass="GalleryViewController" customModule="Swift_Snippets" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" springLoaded="YES" id="XOt-2Q-OVz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,7 @@
                             <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="LBW-Oh-NGg" customClass="PhotoCell" customModule="StoryboardSnippets" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="LBW-Oh-NGg" customClass="PhotoCell" customModule="Swift_Snippets" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="414" height="354"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mzb-h4-ADm">
@@ -322,10 +322,38 @@
             </objects>
             <point key="canvasLocation" x="1841" y="870"/>
         </scene>
+        <!--Taptic Feedback-->
+        <scene sceneID="d3R-1f-LLZ">
+            <objects>
+                <viewController storyboardIdentifier="taptic" title="Taptic Feedback" id="G3V-Be-TxT" customClass="TapticViewController" customModule="Swift_Snippets" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SPI-cA-D2C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgY-Ei-rFy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GgY-Ei-rFy" firstAttribute="top" secondItem="kL9-d6-n7m" secondAttribute="top" id="8fP-JT-mXb"/>
+                            <constraint firstItem="GgY-Ei-rFy" firstAttribute="centerX" secondItem="SPI-cA-D2C" secondAttribute="centerX" id="LnX-Ag-i6w"/>
+                            <constraint firstItem="GgY-Ei-rFy" firstAttribute="leading" secondItem="kL9-d6-n7m" secondAttribute="leading" id="swH-Ws-cbu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kL9-d6-n7m"/>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="GgY-Ei-rFy" id="lvq-Su-lpX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIp-Jc-PcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="1610"/>
+        </scene>
         <!--Popover View Controller-->
         <scene sceneID="6We-We-0XM">
             <objects>
-                <viewController storyboardIdentifier="popover" id="3zl-Xh-u1j" customClass="PopoverViewController" customModule="GroupComposition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popover" id="3zl-Xh-u1j" customClass="PopoverViewController" customModule="Swift_Snippets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G1E-j0-F6L">
                         <rect key="frame" x="0.0" y="0.0" width="260" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,6 +370,7 @@
                             <constraint firstItem="Ugr-ML-C57" firstAttribute="centerY" secondItem="G1E-j0-F6L" secondAttribute="centerY" placeholder="YES" id="95H-p2-avg"/>
                             <constraint firstAttribute="trailing" secondItem="Ugr-ML-C57" secondAttribute="trailing" constant="16" placeholder="YES" id="KXC-Rt-sGj"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cgr-gi-NJY"/>
                     </view>
                     <size key="freeformSize" width="260" height="120"/>
                     <connections>
