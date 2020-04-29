@@ -10,6 +10,8 @@
 		0105EC0024563E55002B38A4 /* AlwaysPresentAsPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105EBFF24563E55002B38A4 /* AlwaysPresentAsPopover.swift */; };
 		0105EC0224563ECE002B38A4 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105EC0124563ECE002B38A4 /* PopoverViewController.swift */; };
 		0105EC0424568719002B38A4 /* PopoverPlacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105EC0324568719002B38A4 /* PopoverPlacementViewController.swift */; };
+		0105EC0724591EA9002B38A4 /* TapticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105EC0624591EA9002B38A4 /* TapticViewController.swift */; };
+		0105EC0B245947F0002B38A4 /* TapticGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0105EC0A245947F0002B38A4 /* TapticGenerator.swift */; };
 		017E1F062454E01000D5362E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E1F052454E01000D5362E /* AppDelegate.swift */; };
 		017E1F082454E01000D5362E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017E1F072454E01000D5362E /* SceneDelegate.swift */; };
 		017E1F0D2454E01000D5362E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017E1F0B2454E01000D5362E /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		0105EBFF24563E55002B38A4 /* AlwaysPresentAsPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlwaysPresentAsPopover.swift; sourceTree = "<group>"; };
 		0105EC0124563ECE002B38A4 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		0105EC0324568719002B38A4 /* PopoverPlacementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverPlacementViewController.swift; sourceTree = "<group>"; };
+		0105EC0624591EA9002B38A4 /* TapticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapticViewController.swift; sourceTree = "<group>"; };
+		0105EC0A245947F0002B38A4 /* TapticGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapticGenerator.swift; sourceTree = "<group>"; };
 		017E1F022454E01000D5362E /* Swift Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Snippets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		017E1F052454E01000D5362E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		017E1F072454E01000D5362E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 			path = PopoverMessage;
 			sourceTree = "<group>";
 		};
+		0105EC0524591E7E002B38A4 /* Taptic */ = {
+			isa = PBXGroup;
+			children = (
+				0105EC0624591EA9002B38A4 /* TapticViewController.swift */,
+				0105EC0A245947F0002B38A4 /* TapticGenerator.swift */,
+			);
+			path = Taptic;
+			sourceTree = "<group>";
+		};
 		017E1EF92454E01000D5362E = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 		017E1F50245530A200D5362E /* Snippets */ = {
 			isa = PBXGroup;
 			children = (
+				0105EC0524591E7E002B38A4 /* Taptic */,
 				0105EBFE24563E15002B38A4 /* PopoverMessage */,
 				017E1F512455316600D5362E /* SavePhotoCustomAlbum */,
 				017E1F4624552B2900D5362E /* snippets.json */,
@@ -340,9 +354,11 @@
 				017E1F3B2454FBE800D5362E /* SnippetCell.swift in Sources */,
 				017E1F082454E01000D5362E /* SceneDelegate.swift in Sources */,
 				017E1F4D24552E4800D5362E /* Snippet.swift in Sources */,
+				0105EC0B245947F0002B38A4 /* TapticGenerator.swift in Sources */,
 				017E1F432455162500D5362E /* PhotoCell.swift in Sources */,
 				017E1F412455157700D5362E /* GalleryViewController.swift in Sources */,
 				017E1F392454F80B00D5362E /* SnippetsViewController.swift in Sources */,
+				0105EC0724591EA9002B38A4 /* TapticViewController.swift in Sources */,
 				017E1F3D2454FDDD00D5362E /* Extensions.swift in Sources */,
 				0105EC0424568719002B38A4 /* PopoverPlacementViewController.swift in Sources */,
 				0105EC0024563E55002B38A4 /* AlwaysPresentAsPopover.swift in Sources */,
@@ -525,7 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elliottio.StoryboardSnippets;
 				PRODUCT_NAME = "Swift Snippets";
 				SWIFT_VERSION = 5.0;
@@ -544,7 +560,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elliottio.StoryboardSnippets;
 				PRODUCT_NAME = "Swift Snippets";
 				SWIFT_VERSION = 5.0;

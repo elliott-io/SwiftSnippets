@@ -34,6 +34,13 @@ public extension UICollectionViewFlowLayout {
 
         let newVerticalOffset = ((currentPage + flickedPages) * pageHeight) - collectionView.contentInset.top
 
+        // give haptic feedback based on how many cells are scrolls
+        if abs(flickedPages) > 1 {
+            TapticGenerator.notification(.success)
+        } else {
+            TapticGenerator.impact(.medium)
+        }
+
         return CGPoint(x: proposedContentOffset.x, y: newVerticalOffset - collectionView.safeAreaInsets.top)
     }
 }
@@ -58,7 +65,7 @@ extension UIApplication {
 extension UIViewController {
     static var existingPopover: PopoverViewController?
     
-    func showPopover(message: String, sourceView: UIView, sourceRect: CGRect, arrowDirection: UIPopoverArrowDirection = [], passthroughViews: [UIView]? = nil) {
+    func showPopover(message: String, sourceView: UIView, sourceRect: CGRect, arrowDirection: UIPopoverArrowDirection = [], passthroughViews: [UIView]? = []) {
         DispatchQueue.main.async {
             
             // init view controller
@@ -84,7 +91,7 @@ extension UIViewController {
             if let views = passthroughViews {
                 presentationController.passthroughViews = views
             }
-                        
+                                    
             // if there is an existing presenting view controller, dismiss it before presenting this popover
             if let existing = UIViewController.existingPopover {
                 existing.dismiss(animated: true, completion: {

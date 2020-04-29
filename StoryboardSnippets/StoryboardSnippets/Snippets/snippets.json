@@ -15,6 +15,14 @@
     },
     {
         "id": "3",
+        "title": "Taptic",
+        "subtitle": "Generates haptic feedback using Apple's Taptic Engine.",
+        "sourceFiles": ["TapticGenerator.swift"],
+        "assetImageName": "encryption",
+        "vcIdentifier": "taptic"
+    },
+    {
+        "id": "3",
         "title": "Text Encryption",
         "subtitle": "Encrypt and decrypt text.",
         "sourceFiles": ["beep.swift", "boop.swift"],

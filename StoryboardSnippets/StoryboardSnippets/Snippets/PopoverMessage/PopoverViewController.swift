@@ -13,7 +13,7 @@ class PopoverViewController: UIViewController {
     
     @IBOutlet weak var labelMessage: UILabel!
     var message:String?
-    var sendingViewController: UIViewController?
+    weak var sendingViewController: UIViewController?
     var arrowDirection: UIPopoverArrowDirection = .any
 
     let ltPadding: CGFloat = 20 // leading/trailing padding
