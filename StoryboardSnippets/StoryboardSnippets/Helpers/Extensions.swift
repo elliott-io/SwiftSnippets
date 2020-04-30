@@ -17,30 +17,29 @@ public extension UICollectionViewFlowLayout {
             return latestOffset
         }
 
-        // Page height used for estimating and calculating paging.
+        // page height used for estimating and calculating paging
         let pageHeight = self.itemSize.height + self.minimumLineSpacing
 
-        // Make an estimation of the current page position.
-        let totalPages = floor(collectionView.contentSize.height / pageHeight)
+        // determine total pages
+        // collectionView adds an extra self.minimumLineSpacing to the total contentSize.height so this must be removed to get an even division of pages
+        let totalPages = (collectionView.contentSize.height - self.minimumLineSpacing) / pageHeight
 
-        print(collectionView.indexPathsForVisibleItems)
+        // determine current page index
         let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
         let visiblePoint = self.itemSize.height * 2 > collectionView.visibleSize.height ? CGPoint(x: visibleRect.midX, y: visibleRect.midY) : CGPoint(x: visibleRect.midX, y: visibleRect.midY - (self.itemSize.height / 3))
         let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint)?.row ?? 0
-        let current = CGFloat(visibleIndexPath)
+        let currentIndex = CGFloat(visibleIndexPath)
         
-        print("visibleIndexPath: \(visibleIndexPath)")
-
-        // Make an estimation of the current page position.
+        // make an estimation of the current page position
         let approximatePage = collectionView.contentOffset.y / pageHeight
 
-        // Determine the current page based on velocity.
+        // determine the current page based on velocity
         let currentPage = velocity.y == 0 ? round(approximatePage) : (velocity.y < 0.0 ? floor(approximatePage) : ceil(approximatePage))
 
-        // Create custom flickVelocity.
+        // create custom flickVelocity
         let flickVelocity = velocity.y * 0.5
 
-        // Check how many pages the user flicked, if <= 1 then flickedPages should return 0.
+        // check how many pages the user flicked, if <= 1 then flickedPages should return 0
         let flickedPages = (abs(round(flickVelocity)) <= 1) ? 0 : round(flickVelocity)
 
         // determine the new vertical offset
@@ -58,12 +57,12 @@ public extension UICollectionViewFlowLayout {
         // determine if there are multiple pages available to swipe based on current page
         var multipleAvailable = false
         if flickVelocity > 0 {
-            multipleAvailable = current + swipeDirection < totalPages - 1 ? true : false
+            multipleAvailable = currentIndex + swipeDirection < totalPages - 1 ? true : false
         } else {
-            multipleAvailable = current + swipeDirection > 0 ? true : false
+            multipleAvailable = currentIndex + swipeDirection > 0 ? true : false
         }
         
-        // give haptic feedback based on how many cells are scrolls
+        // give haptic feedback based on how many cells are scrolled
         if beyond == false && stay == false {
             if abs(flickedPages) > 1 && multipleAvailable {
                 TapticGenerator.notification(.success)
