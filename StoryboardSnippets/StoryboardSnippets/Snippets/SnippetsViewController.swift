@@ -12,8 +12,7 @@ import UIKit
 class SnippetsViewController : UICollectionViewController {
     
     let cellId = "snippetCell"
-    var snippets: [Snippet]?
-    let lineSpacing: CGFloat = 20
+    var snippets: [Snippet]!
     var cellSize = CGSize.init()
     
     override func viewDidLoad() {
@@ -46,11 +45,9 @@ class SnippetsViewController : UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? SnippetCell,
             let snippet = snippets?[indexPath.row] else { return UICollectionViewCell.init() }
-        
-        
+         
         cell.set(snippet)
         
         return cell
     }
 }
-
