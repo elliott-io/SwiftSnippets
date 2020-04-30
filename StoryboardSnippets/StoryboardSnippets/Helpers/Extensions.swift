@@ -21,26 +21,57 @@ public extension UICollectionViewFlowLayout {
         let pageHeight = self.itemSize.height + self.minimumLineSpacing
 
         // Make an estimation of the current page position.
-        let approximatePage = collectionView.contentOffset.y/pageHeight
+        let totalPages = floor(collectionView.contentSize.height / pageHeight)
+
+        print(collectionView.indexPathsForVisibleItems)
+        let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
+        let visiblePoint = self.itemSize.height * 2 > collectionView.visibleSize.height ? CGPoint(x: visibleRect.midX, y: visibleRect.midY) : CGPoint(x: visibleRect.midX, y: visibleRect.midY - (self.itemSize.height / 3))
+        let visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint)?.row ?? 0
+        let current = CGFloat(visibleIndexPath)
+        
+        print("visibleIndexPath: \(visibleIndexPath)")
+
+        // Make an estimation of the current page position.
+        let approximatePage = collectionView.contentOffset.y / pageHeight
 
         // Determine the current page based on velocity.
         let currentPage = velocity.y == 0 ? round(approximatePage) : (velocity.y < 0.0 ? floor(approximatePage) : ceil(approximatePage))
 
         // Create custom flickVelocity.
-        let flickVelocity = velocity.y * 0.4
+        let flickVelocity = velocity.y * 0.5
 
         // Check how many pages the user flicked, if <= 1 then flickedPages should return 0.
         let flickedPages = (abs(round(flickVelocity)) <= 1) ? 0 : round(flickVelocity)
 
+        // determine the new vertical offset
         let newVerticalOffset = ((currentPage + flickedPages) * pageHeight) - collectionView.contentInset.top
 
-        // give haptic feedback based on how many cells are scrolls
-        if abs(flickedPages) > 1 {
-            TapticGenerator.notification(.success)
-        } else {
-            TapticGenerator.impact(.medium)
-        }
+        // determine up or down swipe
+        let swipeDirection: CGFloat = flickVelocity > 0 ? 1 : -1
+        
+        // determine if we are at the end of beginning of list
+        let beyond = newVerticalOffset + pageHeight >= collectionView.contentSize.height || collectionView.contentOffset.y < 0 ? true : false
 
+        // determine if the flick was too small to switch pages
+        let stay = abs(newVerticalOffset - collectionView.contentOffset.y) < (self.itemSize.height * 0.4) ? true : false
+        
+        // determine if there are multiple pages available to swipe based on current page
+        var multipleAvailable = false
+        if flickVelocity > 0 {
+            multipleAvailable = current + swipeDirection < totalPages - 1 ? true : false
+        } else {
+            multipleAvailable = current + swipeDirection > 0 ? true : false
+        }
+        
+        // give haptic feedback based on how many cells are scrolls
+        if beyond == false && stay == false {
+            if abs(flickedPages) > 1 && multipleAvailable {
+                TapticGenerator.notification(.success)
+            } else {
+                TapticGenerator.impact(.medium)
+            }
+        }
+        
         return CGPoint(x: proposedContentOffset.x, y: newVerticalOffset - collectionView.safeAreaInsets.top)
     }
 }
