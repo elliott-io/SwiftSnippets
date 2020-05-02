@@ -59,16 +59,16 @@ Several extensions were written in [Extensions.swift](/StoryboardSnippets/Storyb
 ## [UICollectionViewFlowLayout - targetContentOffset](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L13)
 Short swipes scroll cell-by-cell in a collection view. Long swipes will scroll multiple items.
 
-## [UIApplication - topViewController](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L79)
+## [UIApplication - topViewController](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L82)
 Returns the top UIViewController in the app heirarchy. Useful for presenting alerts from any source file.
 
-## [UIViewController - showAlert](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L140)
+## [UIViewController - showAlert](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L143)
 Displays an alert on any view controller with parameters for title, message, action name (which will appear on the alert button), and an optional image in corner of the header. 
 
-## [UIViewController - showPopover](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L98)
+## [UIViewController - showPopover](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L101)
 Displays an automatically-sized popover on any view controller with parameters for message, source view, source rect (within that source view), passthrough views (which can still be interacted without dismissing the popover), and arrow direction. Dismisses existing presented view controller if one exists (iOS will not allow you to present more than one view controller at a time).
 
-## [String - size](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L158)
+## [String - size](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L161)
 Returns the visual size of text with parameters for default width, font, and font weight. Used to determine popover preferred size based on how long the message text is. 
 
 # Styles
