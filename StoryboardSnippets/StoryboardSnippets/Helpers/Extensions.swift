@@ -168,12 +168,5 @@ extension String {
         label.sizeToFit()
         
         return CGSize(width: label.frame.width, height: label.frame.height)
-        
-        let squared = square(5)
-        print(squared) // prints 25
-    }
-    
-    func square(_ number: Int) -> Int {
-        return number * number
     }
 }
