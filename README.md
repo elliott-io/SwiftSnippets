@@ -13,7 +13,7 @@ This project contains snippet implementations in an Xcode project that uses stor
 
 ## How to Use
 
-Launching the project will display the [SnippetsViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/SnippetViewController.swift). 
+Launching the project will display the [SnippetsViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/SnippetsViewController.swift). 
 
 On viewDidLoad, [SnippetManager](/StoryboardSnippets/StoryboardSnippets/Snippets/SnippetManager.swift) reads the local [snippet.json](/StoryboardSnippets/StoryboardSnippets/Snippets/snippets.json) file and converts the data into an array of [Snippets](/StoryboardSnippets/StoryboardSnippets/Snippets/Snippet.swift). 
 
