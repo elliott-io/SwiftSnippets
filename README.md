@@ -43,7 +43,7 @@ Selecting this [snippet](/StoryboardSnippets/StoryboardSnippets/Snippets/Popover
 
 A [PopoverViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/PopoverViewController.swift) will be displayed when interacting with these items. 
 
-> **ProTip:** You'll notice in the extension function for [showPopover](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L61) that [AlwaysPresentAsPopover](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/AlwaysPresentAsPopover.swift) is used to make the PopoverViewController present as an actual popover, rather than a default view controller.
+> **ProTip:** You'll notice in the extension function for [showPopover](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L101) that [AlwaysPresentAsPopover](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/AlwaysPresentAsPopover.swift) is used to make the PopoverViewController present as an actual popover, rather than a default view controller.
 
 ## Taptic (Haptic Feedback)
 
@@ -51,7 +51,7 @@ Selecting this [snippet](/StoryboardSnippets/StoryboardSnippets/Snippets/Taptic/
 
 [TapticGenerator](/StoryboardSnippets/StoryboardSnippets/Snippets/Taptic/TapticGenerator.swift) can be run from anywhere in a project to give haptic feedback. 
 
-> This is used in this project when swiping through cells. It is called from the extension function [targetContentOffset](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L68)
+> This is used in this project when swiping through cells. It is called from the extension function [targetContentOffset](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L13)
 
 # Extensions
 Several extensions were written in [Extensions.swift](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift) to help facilitate common functions that are used across snippets.
