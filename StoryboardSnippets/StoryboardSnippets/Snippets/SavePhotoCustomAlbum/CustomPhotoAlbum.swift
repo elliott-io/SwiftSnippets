@@ -82,12 +82,19 @@ class CustomPhotoAlbum: NSObject {
     /// - Parameter image: The image to saved.
     /// - Returns: A successful or not result Bool and optional Error in `completion`.
     func save(_ image: UIImage, completion: @escaping ((Bool, Error?) -> ())) {
+        
+        // if user didn't authorize access to Photos, return an error
+        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
+            completion(false, CustomPhotoAlbumError.unauthorized)
+            return
+        }
+
         if assetCollection == nil {
             // if there was an error upstream, skip the save
             completion(false, assetCollectionError)
             return
         }
-
+        
         PHPhotoLibrary.shared().performChanges({
             let assetChangeRequest = PHAssetChangeRequest.creationRequestForAsset(from: image)
             let assetPlaceHolder = assetChangeRequest.placeholderForCreatedAsset
@@ -99,4 +106,8 @@ class CustomPhotoAlbum: NSObject {
             completion(result, error)
         })
     }
+}
+
+enum CustomPhotoAlbumError: Error {
+    case unauthorized
 }

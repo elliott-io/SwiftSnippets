@@ -70,7 +70,12 @@ class PhotoCell: UICollectionViewCell {
                 if let e = error {
                     // show error
                     print(e)
-                    vc.showAlert(title: "Error", message: e.localizedDescription, actionName: "Close", headerImage: image)
+                    switch (e) {
+                    case CustomPhotoAlbumError.unauthorized:
+                        vc.showAlert(title: "Access Error", message: "Swift Snippets doesn't have access to your Photos to save anything.\n\nPlease change this in the Settings app by scrolling down to Swift Snippets and changing the Photos setting to All Photos.", actionName: "Close", headerImage: image)
+                    default:
+                        vc.showAlert(title: "Error", message: e.localizedDescription, actionName: "Close", headerImage: image)
+                    }
                     return
                 }
                 // save successful, inform user
