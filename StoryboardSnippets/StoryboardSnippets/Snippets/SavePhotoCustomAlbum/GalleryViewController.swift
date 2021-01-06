@@ -20,10 +20,14 @@ class GalleryViewController : UICollectionViewController {
 //        "charredTree", // https://www.instagram.com/p/Bj5TJvvF9ZO/
     ]
     
+    let sharedPhotoAlbum = CustomPhotoAlbum.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.collectionView.decelerationRate = .fast
+        
+        
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
