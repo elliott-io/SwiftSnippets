@@ -43,7 +43,10 @@ public extension UICollectionViewFlowLayout {
         let flickedPages = (abs(round(flickVelocity)) <= 1) ? 0 : round(flickVelocity)
 
         // determine the new vertical offset
+        // scroll to top of next/previos cell
         let newVerticalOffset = ((currentPage + flickedPages) * pageHeight) - collectionView.contentInset.top
+        // scroll to center of next/previous cell
+//        let newVerticalOffset = ((currentPage + flickedPages) * pageHeight) + ((collectionView.visibleSize.height - pageHeight) / 2) - collectionView.contentInset.top
 
         // determine up or down swipe
         let swipeDirection: CGFloat = flickVelocity > 0 ? 1 : -1

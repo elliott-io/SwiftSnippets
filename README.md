@@ -13,7 +13,7 @@ This project contains snippet implementations in an Xcode project that uses stor
 
 ## How to Use
 
-Launching the project will display the [SnippetsViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/SnippetViewController.swift). 
+Launching the project will display the [SnippetsViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/SnippetsViewController.swift). 
 
 On viewDidLoad, [SnippetManager](/StoryboardSnippets/StoryboardSnippets/Snippets/SnippetManager.swift) reads the local [snippet.json](/StoryboardSnippets/StoryboardSnippets/Snippets/snippets.json) file and converts the data into an array of [Snippets](/StoryboardSnippets/StoryboardSnippets/Snippets/Snippet.swift). 
 
@@ -43,24 +43,32 @@ Selecting this [snippet](/StoryboardSnippets/StoryboardSnippets/Snippets/Popover
 
 A [PopoverViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/PopoverViewController.swift) will be displayed when interacting with these items. 
 
-> **ProTip:** You'll notice in the extension function for [showPopover](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L61) that [AlwaysPresentAsPopover](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/AlwaysPresentAsPopover.swift) is used to make the PopoverViewController present as an actual popover, rather than a default view controller.
+> **ProTip:** You'll notice in the extension function for [showPopover](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L101) that [AlwaysPresentAsPopover](/StoryboardSnippets/StoryboardSnippets/Snippets/PopoverMessage/AlwaysPresentAsPopover.swift) is used to make the PopoverViewController present as an actual popover, rather than a default view controller.
+
+## Taptic (Haptic Feedback)
+
+Selecting this [snippet](/StoryboardSnippets/StoryboardSnippets/Snippets/Taptic/), you will see a [TapticViewController](/StoryboardSnippets/StoryboardSnippets/Snippets/Taptic/TapticViewController.swift) titled **Taptic Feedback** displaying a picker and a button to feel the selected taptic feedback. 
+
+[TapticGenerator](/StoryboardSnippets/StoryboardSnippets/Snippets/Taptic/TapticGenerator.swift) can be run from anywhere in a project to give haptic feedback. 
+
+> This is used in this project when swiping through cells. It is called from the extension function [targetContentOffset](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L13)
 
 # Extensions
 Several extensions were written in [Extensions.swift](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift) to help facilitate common functions that are used across snippets.
 
-## UICollectionViewFlowLayout - targetContentOffset
+## [UICollectionViewFlowLayout - targetContentOffset](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L13)
 Short swipes scroll cell-by-cell in a collection view. Long swipes will scroll multiple items.
 
-## UIApplication - topViewController
+## [UIApplication - topViewController](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L82)
 Returns the top UIViewController in the app heirarchy. Useful for presenting alerts from any source file.
 
-## UIViewController - showAlert
+## [UIViewController - showAlert](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L143)
 Displays an alert on any view controller with parameters for title, message, action name (which will appear on the alert button), and an optional image in corner of the header. 
 
-## UIViewController - showPopover
+## [UIViewController - showPopover](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L101)
 Displays an automatically-sized popover on any view controller with parameters for message, source view, source rect (within that source view), passthrough views (which can still be interacted without dismissing the popover), and arrow direction. Dismisses existing presented view controller if one exists (iOS will not allow you to present more than one view controller at a time).
 
-## String - size
+## [String - size](/StoryboardSnippets/StoryboardSnippets/Helpers/Extensions.swift#L161)
 Returns the visual size of text with parameters for default width, font, and font weight. Used to determine popover preferred size based on how long the message text is. 
 
 # Styles

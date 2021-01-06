@@ -14,15 +14,15 @@ class SnippetsViewController : UICollectionViewController {
     let cellId = "snippetCell"
     var snippets: [Snippet]!
     var cellSize = CGSize.init()
-    
+    var loggedIn = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.collectionView.decelerationRate = .fast
 
         self.snippets = SnippetManager.shared.loadSnippets()
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let snippet = snippets?[indexPath.row] else { return }
